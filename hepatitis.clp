@@ -1,13 +1,13 @@
 (defrule is-HBsAG
 =>
-    (printout t "HBsAG?")
+    (printout t "HBsAG? ")
     (assert (HBsAG (read)))
 )
 
 (defrule is-anti-HDV
     (HBsAG positive)
 =>
-    (printout t "anti-HDV?")
+    (printout t "anti-HDV? ")
     (assert (anti-HDV (read)))
 )
 
@@ -15,7 +15,7 @@
     (HBsAG positive)
     (anti-HDV negative)
 =>
-    (printout t "anti-HBc?")
+    (printout t "anti-HBc? ")
     (assert (anti-HBc (read)))
 )
 
@@ -23,7 +23,7 @@
     (HBsAG positive)
     (anti-HDV positive)
 =>
-    (printout t "Hepatitis B + D" crlf)
+    (printout t "Hasil Prediksi = Hepatitis B + D" crlf)
 )
 
 (defrule is-anti-HBs
@@ -31,7 +31,7 @@
     (anti-HDV negative)
     (anti-HBc positive)
 =>
-    (printout t "anti-HBs?")
+    (printout t "anti-HBs? ")
     (assert (anti-HBs (read)))
 )
 
@@ -40,7 +40,7 @@
     (anti-HDV negative)
     (anti-HBc negative)
 =>
-    (printout t "Uncertain" crlf)
+    (printout t "Hasil prediksi = Uncertain configuration" crlf)
 )
 
 (defrule uncertain2
@@ -49,7 +49,7 @@
     (anti-HBc positive)
     (anti-HBs positive)
 =>
-    (printout t "Uncertain" crlf)
+    (printout t "Hasil prediksi = Uncertain configuration" crlf)
 )
 
 (defrule is-IgM-anti-HBc
@@ -58,7 +58,7 @@
     (anti-HBc positive)
     (anti-HBs negative)
 =>
-    (printout t "IgM-anti-HBc?")
+    (printout t "IgM-anti-HBc? ")
     (assert (IgM-anti-HBc (read)))
 )
 
@@ -69,7 +69,7 @@
     (anti-HBs negative)
     (IgM-anti-HBc positive)
 =>
-    (printout t "acute infection" crlf)
+    (printout t "Hasil prediksi = Acute infection" crlf)
 )
 
 (defrule chronic-infection
@@ -79,13 +79,13 @@
     (anti-HBs negative)
     (IgM-anti-HBc negative)
 =>
-    (printout t "chronic infection" crlf)
+    (printout t "Hasil prediksi = Chronic infection" crlf)
 )
 
 (defrule is-anti-HBs2
     (HBsAG negative)
 =>
-    (printout t "anti-HBs?")
+    (printout t "anti-HBs? ")
     (assert (anti-HBs (read)))
 )
 
@@ -94,7 +94,7 @@
     (HBsAG negative)
     (anti-HBs positive)
 =>
-    (printout t "anti-HBc?")
+    (printout t "anti-HBc? ")
     (assert (anti-HBc (read)))
 )
 
@@ -102,7 +102,7 @@
     (HBsAG negative)
     (anti-HBs negative)
 =>
-    (printout t "anti-HBc?")
+    (printout t "anti-HBc? ")
     (assert (anti-HBc (read)))
 )
 
@@ -111,7 +111,7 @@
     (anti-HBs negative)
     (anti-HBc positive)
 =>
-    (printout t "Unclear" crlf)
+    (printout t "Hasil Prediksi = Unclear" crlf)
 )
 
 (defrule healthy-not-vaccinated
@@ -119,7 +119,7 @@
     (anti-HBs negative)
     (anti-HBc negative)
 =>
-    (printout t "Healthy, not vaccinated" crlf)
+    (printout t "Hasil Prediksi = Healthy not vaccinated or suspicious" crlf)
 )
 
 (defrule cured
@@ -127,7 +127,7 @@
     (anti-HBs positive)
     (anti-HBc positive)
 =>
-    (printout t "cured" crlf)
+    (printout t "Hasil Prediksi = Cured" crlf)
 )
 
 (defrule vaccinated
@@ -135,5 +135,5 @@
     (anti-HBs positive)
     (anti-HBc negative)
 =>
-    (printout t "vaccinated" crlf)
+    (printout t "Hasil Prediksi = Vaccinated" crlf)
 )
