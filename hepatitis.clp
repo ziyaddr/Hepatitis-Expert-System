@@ -23,6 +23,7 @@
     (HBsAG positive)
     (anti-HDV positive)
 =>
+    (assert (hepatitis-B+D positive))
     (printout t "Hasil Prediksi = Hepatitis B + D" crlf)
 )
 
@@ -40,6 +41,7 @@
     (anti-HDV negative)
     (anti-HBc negative)
 =>
+    (assert (uncertain positive))
     (printout t "Hasil prediksi = Uncertain configuration" crlf)
 )
 
@@ -49,6 +51,7 @@
     (anti-HBc positive)
     (anti-HBs positive)
 =>
+    (assert (uncertain positive))
     (printout t "Hasil prediksi = Uncertain configuration" crlf)
 )
 
@@ -69,6 +72,7 @@
     (anti-HBs negative)
     (IgM-anti-HBc positive)
 =>
+    (assert (acute-infection positive))
     (printout t "Hasil prediksi = Acute infection" crlf)
 )
 
@@ -79,6 +83,7 @@
     (anti-HBs negative)
     (IgM-anti-HBc negative)
 =>
+    (assert (chronic-infection positive))
     (printout t "Hasil prediksi = Chronic infection" crlf)
 )
 
@@ -111,6 +116,7 @@
     (anti-HBs negative)
     (anti-HBc positive)
 =>
+    (assert (unclear positive))
     (printout t "Hasil Prediksi = Unclear" crlf)
 )
 
@@ -119,6 +125,7 @@
     (anti-HBs negative)
     (anti-HBc negative)
 =>
+    (assert (healthy-not-vaccinated positive))
     (printout t "Hasil Prediksi = Healthy not vaccinated or suspicious" crlf)
 )
 
@@ -127,6 +134,7 @@
     (anti-HBs positive)
     (anti-HBc positive)
 =>
+    (assert (cured positive))
     (printout t "Hasil Prediksi = Cured" crlf)
 )
 
@@ -135,5 +143,6 @@
     (anti-HBs positive)
     (anti-HBc negative)
 =>
+    (assert (vaccinated positive))
     (printout t "Hasil Prediksi = Vaccinated" crlf)
 )
